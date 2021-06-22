@@ -1,8 +1,13 @@
-Heading
+Mosaic Tiling Plugin
 ===================
+This is a simple javascript plugin that lets you show images in a mosaic layout. It has some expandability, which can make adding in lazy loading classes easy & simple.
 
-sub-heading
+What is mosaic tiling?
 -------------------
+Mosaic tiling is a simple feature that allows you to load images as compactly as possible in a given space.
+
+Here's an example:
+![Image](billgallery.png)
 
 this is a test.
 test 2
