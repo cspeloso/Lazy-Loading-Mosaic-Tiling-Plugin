@@ -23,6 +23,7 @@ This plugin is very simply written and easy to expand, so the overall functional
 
 How To Use
 ==================
+This plugin was written to be really easy to use and expand upon. Here's how...
 
 Options
 ------------------
