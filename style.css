@@ -9,10 +9,12 @@ h1{
 /* masonry */
 #masonryContainer{
     width:100%;
+    margin:0 auto;
 }
 
 .masonryColumn{
-    display:inline-grid;
+    height:100%;
+    float:left;
 }
 
 .masonryImgDiv{

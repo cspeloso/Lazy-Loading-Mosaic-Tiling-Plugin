@@ -8,14 +8,16 @@ function mosaicLayout(options) {
         columns: "6",
         mobileColumns: "3",
         smallCutoff: 800,
-        imagesJson: ""
+        imagesJson: "",
+        lazyLoading: false,
+        lazyLoadingClass: 'lazy'
     };
 
     options = { ...defaultOptions, ...options };
 
     let _this = this;
     let masonryContainer = document.getElementById(options.container);
-    let imagesArray = ['one', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three', 'two', 'three'];
+    let imagesArray = options.imagesJson;
     let resizeCheckSM = false;
     let resizeCheckLG = true;
 
@@ -55,8 +57,14 @@ function mosaicLayout(options) {
 
             //  creates an img element
             var img = document.createElement('img');
-            img.src = "client-loader.gif";
-            img.setAttribute('class', options.masonryImg);
+            img.src = options.lazyLoading == true ? "client-loader.gif" : imagesArray[i];
+            img.setAttribute('data-src', imagesArray[i]);
+            img.setAttribute('class', options.masonryImg + ' ' + options.lazyLoadingClass);
+
+            if(colNum == 5)
+            {
+                img.classList.add('sixth');
+            }
 
             //  creates a div for the img element and places it inside
             var imgDiv = document.createElement('div');
@@ -69,7 +77,13 @@ function mosaicLayout(options) {
 
         window.addEventListener('resize', function() {
             _this.resizeChecker();
-        })
+        });
+
+        window.addEventListener('scroll', function(){
+            _this.lazyLoadChecker();
+        });
+
+        _this.lazyLoadChecker();
     };
 
     this.resizeChecker = function(){
@@ -87,4 +101,26 @@ function mosaicLayout(options) {
             resizeCheckLG = true;
         }
     };
+
+    this.lazyLoadChecker = function () {
+        images = document.getElementsByClassName(options.lazyLoadingClass);
+
+        for (var i = 0; i < images.length; i++) {
+            if (isScrolledIntoView(images[i])) {
+                var dataSrc = images[i].getAttribute('data-src');
+                images[i].src = dataSrc;
+                // images[i].src = images[i].getAttribute('data-src');
+                // images[i].classList.remove('lazy');
+            }
+        }
+    };
+
+    function isScrolledIntoView(el){
+        const rect = el.getBoundingClientRect();
+
+        return (
+            (rect.top >= 0 && rect.top <= (window.innerHeight || document.documentElement.clientHeight)) ||
+            (rect.bottom >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+        );
+    }
 }
