@@ -42,5 +42,7 @@ All of these values will use default values unless specifically modified in the 
 Plugin Constructor
 ------------------
 To instantiate the plugin, simply include the plugin's main file and do the following after:
+
 `var mosaic = new mosaicLayout({ container: "masonryContainer"});`
+
 `mosaic.loadImages();`
