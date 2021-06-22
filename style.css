@@ -2,7 +2,8 @@ body{
     margin:0px;
 }
 h1{
-    color:blue;
+    color: rgb(52, 127, 184);
+    user-select: none;
 }
 
 
