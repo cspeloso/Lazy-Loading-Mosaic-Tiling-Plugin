@@ -29,6 +29,7 @@ Options
 ------------------
 There are several options for the user to alter, in hopes of keeping the plugin very easy to use:
 * **container**:        The container is the **ID** for the overall div that the plugin is using to write all the elements out to. This will be emptied by the plugin when the loading functionality is called. Default value:  `masonryContainer`
+
 * **masonryColumn**:    This is the **class** applied to each 'column' in the container. Default value: `masonryColumn`
 * **masonryImgDiv**:    This is the **class** applied to each div containing an image. Mostly here for expandability, I personally used it for lazy loading. Default value: `masonryImgDiv`
 * **masonryImg**:       This is the **class** applied to each image. Default value: `masonryImg` 
