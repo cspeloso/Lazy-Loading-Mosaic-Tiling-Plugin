@@ -19,7 +19,7 @@ in the order you feed them to the plugin.
 This plugin solves this issue by showing images in the order you feed them in (left to right, top to bottom...). The **downside** to this method is that at the bottom
 of the page, the images can generally get pretty funky looking and out of order.
 
-This plugin is very simply written and easy to expand, so the overall functionality can be altered by anyone who uses it fairly easily. 
+This plugin is very simply written and easy to expand, so the overall functionality can be altered by anyone who uses it fairly easily. I've also written it in pure javascript so that it may be implemented anywhere.
 
 How To Use
 ==================
@@ -37,6 +37,7 @@ There are several options for the user to alter, in hopes of keeping the plugin 
 * **mobileColumns**:    This is an **int** that represents the number of columns that will appear when the window width is less than the cutoff number (*specified next*). Pretty simple, but can be expanded further in the plugin. Default value: `3`
 * **smallCutoff**:      This is an **int** that represents the window width where the screen will switch the number of columns to the mobileColumns value specified above. Default value: `800`
 * **imagesJson**:       As the name implies, the JSON that will contain all of the image links. Default value: `null`
+* **lazyLoading**:      This controls whether or not the images fed into the plugin will show by default or not. It will set the default src img to a simple spinner if set to **true**, and will set the image itself if set to **false.** Default value: `false`
 
 All of these values will use default values unless specifically modified in the plugin constructor. Speaking of which...
 
@@ -47,3 +48,5 @@ To instantiate the plugin, simply include the plugin's main file and do the foll
 `var mosaic = new mosaicLayout({ container: "masonryContainer"});`
 
 `mosaic.loadImages();`
+
+
