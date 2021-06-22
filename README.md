@@ -19,7 +19,7 @@ in the order you feed them to the plugin.
 This plugin solves this issue by showing images in the order you feed them in (left to right, top to bottom...). The **downside** to this method is that at the bottom
 of the page, the images can generally get pretty funky looking and out of order.
 
-This plugin is very simply written and easy to expand, so the overall functionality can be altered by anyone who uses it fairly easily. 
+This plugin is very simply written and easy to expand, so the overall functionality can be altered by anyone who uses it fairly easily. I've also written it in pure javascript so that it may be implemented anywhere.
 
 How To Use
 ==================
