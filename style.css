@@ -1,3 +1,26 @@
+body{
+    margin:0px;
+}
 h1{
     color:blue;
+}
+
+
+/* masonry */
+#masonryContainer{
+    width:100%;
+}
+
+.masonryColumn{
+    display:inline-grid;
+}
+
+.masonryImgDiv{
+    margin:0px;
+    padding:1px;
+}
+
+.masonryImg{
+    width:100%;
+    display:block;
 }

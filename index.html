@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lazy Loading / Mosaic Tiling</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
 </head>
 <body>
     <h1>test</h1>    
+    <div id="masonryContainer" class=>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        var mosaic = new mosaicLayout({
+            container: "masonryContainer"
+        });
+        mosaic.loadImages();
+    </script>
 </body>
 </html>
