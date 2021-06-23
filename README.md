@@ -46,7 +46,7 @@ Plugin Constructor
 ------------------
 To instantiate the plugin, simply include the plugin's main file and do the following after:
 
-`var mosaic = new mosaicLayout({ container: "masonryContainer"});`
+`var mosaic = new mosaicLayout({ container: "masonryContainer", columns: 5, mobileColumns:4, imagesJson: ["https://link-to-img/img.png", "image-in-directory.jpg"] });`
 
 `mosaic.loadImages();`
 
