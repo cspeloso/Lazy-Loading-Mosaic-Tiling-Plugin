@@ -8,7 +8,7 @@ function mosaicLayout(options) {
         columns: "6",
         mobileColumns: "3",
         smallCutoff: 800,
-        imagesJson: "",
+        imagesArray: "",
         lazyLoading: false,
         lazyLoadingClass: 'lazy'
     };
@@ -17,11 +17,11 @@ function mosaicLayout(options) {
 
     let _this = this;
     let masonryContainer = document.getElementById(options.container);
-    let imagesArray = options.imagesJson;
     let resizeCheckSM = false;
     let resizeCheckLG = true;
 
     this.loadImages = function () {
+        
         //  clear masonry container out, in case we're resizing...
         masonryContainer.innerHTML = '';
 
@@ -51,14 +51,14 @@ function mosaicLayout(options) {
         }
 
         //  places the images into each column
-        for (var i = 0; i < imagesArray.length; i++) {
+        for (var i = 0; i < options.imagesArray.length; i++) {
             //  grabs the column number for the image
             var colNum = i % columnCount;
 
             //  creates an img element
             var img = document.createElement('img');
-            img.src = options.lazyLoading == true ? "client-loader.gif" : imagesArray[i];
-            img.setAttribute('data-src', imagesArray[i]);
+            img.src = options.lazyLoading == true ? "client-loader.gif" : options.imagesArray[i];
+            img.setAttribute('data-src', options.imagesArray[i]);
             img.setAttribute('class', options.masonryImg + ' ' + options.lazyLoadingClass);
 
             if(colNum == 5)
