@@ -38,6 +38,7 @@ There are several options for the user to alter, in hopes of keeping the plugin 
 * **smallCutoff**:      This is an **int** that represents the window width where the screen will switch the number of columns to the mobileColumns value specified above. Default value: `800`
 * **imagesJson**:       As the name implies, the JSON that will contain all of the image links. Default value: `null`
 * **lazyLoading**:      This controls whether or not the images fed into the plugin will show by default or not. It will set the default src img to a simple spinner if set to **true**, and will set the image itself if set to **false.** Default value: `false`
+* **lazyLoadingClass**: This is the class that will be applied to lazy loaded images. When an image with the masonryImg tag and this tag as it's class comes into view, the image will be loaded. Default value: `lazy`
 
 All of these values will use default values unless specifically modified in the plugin constructor. Speaking of which...
 

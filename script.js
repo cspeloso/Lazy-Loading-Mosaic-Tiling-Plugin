@@ -103,7 +103,7 @@ function mosaicLayout(options) {
     };
 
     this.lazyLoadChecker = function () {
-        images = document.getElementsByClassName(options.lazyLoadingClass);
+        images = document.getElementsByClassName(options.masonryImg + ' ' + options.lazyLoadingClass);
 
         for (var i = 0; i < images.length; i++) {
             if (isScrolledIntoView(images[i])) {
