@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lazy Loading / Mosaic Tiling</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Lazy Loading / Mosaic Tiling Plugin</title>
+    <link rel="stylesheet" href="mosaic-styles.css" />
 </head>
 <body>
     <h1>Mosaic Tiling / Lazy Loading Plugin Demo - <a href="https://github.com/cspeloso/lazy-loading-mosaic-tiling-plugin/">click here for repo</a></h1>    
     <div id="masonryContainer" class=>
     </div>
-    <script src="script.js"></script>
+    <script src="lazy-load-mosaic-tile-script.js"></script>
     <script> 
         var mosaic = new mosaicLayout({
             container: "masonryContainer",
@@ -1723,9 +1723,8 @@
             ],
             lazyLoading: true
         });
-        mosaic.loadImages();
-        mosaic.lazyLoadChecker();
-
+        
+        mosaic.initiate();
     </script>
 </body>
 </html>
