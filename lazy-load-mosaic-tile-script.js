@@ -23,7 +23,6 @@ function mosaicLayout(options) {
     this.initiate = function(){
         window.addEventListener('load', function(){
             _this.loadImages();
-            _this.lazyLoadChecker();
         });
     }
 
