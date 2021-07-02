@@ -31,7 +31,7 @@
         let rand = parseInt(Math.random() * (600 - 100) + 100);
         for(let i = 0; i < rand; i++)
             massiveAmountOfImages.push(imagesArray[parseInt(Math.random() * (5-0)+0)]);
-
+            
         //  initializes the mosaic plugin. 
         var mosaic = new mosaicLayout({
             container: "masonryContainer",
@@ -42,6 +42,7 @@
         });
         
         mosaic.initiate();
+
     </script>
 </body>
 </html>
